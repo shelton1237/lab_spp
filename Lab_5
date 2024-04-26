@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Student {
+private:
+    string lastName;
+    string firstName;
+    string groupNumber;
+    double grade1;
+    double grade2;
+    double grade3;
+
+public:
+   
+    Student(string last, string first, string group, double g1, double g2, double g3) {
+        lastName = last;
+        firstName = first;
+        groupNumber = group;
+        grade1 = g1;
+        grade2 = g2;
+        grade3 = g3;
+    }
+
+   
+    void displayInfo() {
+        cout << "Прізвище: " << lastName << endl;
+        cout << "Ім'я: " << firstName << endl;
+        cout << "Номер групи: " << groupNumber << endl;
+        cout << "Оцінки: " << grade1 << ", " << grade2 << ", " << grade3 << endl;
+    }
+
+   
+    double calculateAverage() {
+        return (grade1 + grade2 + grade3) / 3.0;
+    }
+};
+
+int main() {
+   
+    Student student1( "Кіт", "Іван", "Кн-12", 80, 75, 90);
+
+    
+    student1.displayInfo();
+
+    
+    cout << "Середній бал: " << student1.calculateAverage() << endl;
+
+    return 0;
+}
